@@ -24,16 +24,16 @@ public class SchoolClass {
 		this.classId = classId;
 	}
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	public String getLongDescription() {
-		return LongDescription;
+		return longDescription;
 	}
 	public void setLongDescription(String longDescription) {
-		LongDescription = longDescription;
+		this.longDescription = longDescription;
 	}
 	public Set<Student> getStudents() {
 		return students;
@@ -44,8 +44,8 @@ public class SchoolClass {
 	@Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long classId;
-	private String Description;
-	private String LongDescription;
+	private String description;
+	private String longDescription;
 	
 	@OneToMany(mappedBy = "ownClass", cascade = CascadeType.MERGE , fetch = FetchType.LAZY)
 	private Set<Student> students;

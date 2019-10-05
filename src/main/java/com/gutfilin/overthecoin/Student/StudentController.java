@@ -1,5 +1,7 @@
 package com.gutfilin.overthecoin.Student;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,11 @@ public class StudentController {
 	@RequestMapping( method = RequestMethod.GET , value= "/student/{studentId}")
 	Student getStudentById(@PathVariable long studentId ) {
 		return service.getStudentById(studentId);	
+	}
+	
+	@RequestMapping( method = RequestMethod.GET , value= "/wszyscystudenci")
+	List<Student> getAllStudents() {
+		return service.getAllStudents();
 	}
 
 }
