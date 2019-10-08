@@ -24,4 +24,8 @@ public class ClassService {
 		return repository.findAll();
 	}
 
+	public void deleteClass(long classId) {
+		repository.deleteById(classId);
+	}
+
 }

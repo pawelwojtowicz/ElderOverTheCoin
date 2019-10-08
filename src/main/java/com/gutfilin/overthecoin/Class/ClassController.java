@@ -29,4 +29,10 @@ public class ClassController {
 		return service.getAllClasses();
 	}
 	
+	@RequestMapping( method = RequestMethod.DELETE , value= "/class/{classId}")
+	void deleteClassByClassId(@PathVariable long classId) {
+		service.deleteClass( classId);
+	}
+
+	
 }
