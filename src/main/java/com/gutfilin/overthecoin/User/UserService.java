@@ -11,22 +11,27 @@ public class UserService {
 	UserRepository repository;
 
 	public Boolean addUser( User user) {
-		if ( null == repository.findUserByEmail(user.email) ) {
+		User userWithEmail = repository.findUserByEmail(user.email);
+		if ( null ==  userWithEmail ) {
 			repository.save(user);
 			return true;
 		}
 		return false;
 	}
 	
-	public User getUserByEmail(String email) {
-		return repository.findUserByEmail(email);
+	public void updateUserInfo( User user) {
+		repository.save(user);
 	}
 	
-	public void removeUser( String email) {
-		repository.deleteByEmail(email);
+	public User getUserByUserId(long userId) {
+		return repository.findUserByUserId(userId);
 	}
 	
 	public List<User> getAllUsers() {
 		return repository.findAll();
+	}
+
+	public void deleteUser(long userId) {
+		repository.deleteByUserId(userId);
 	}
 }

@@ -40,8 +40,16 @@ public class User {
 	}
 	
 	@Id
-	String email;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	long userId;
+	public long getUserId() {
+		return userId;
+	}
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
 
+	String email;
 	String firstName;
 	String lastName;
 	String phone;
