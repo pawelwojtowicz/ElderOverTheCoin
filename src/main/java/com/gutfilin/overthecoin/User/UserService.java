@@ -32,6 +32,6 @@ public class UserService {
 	}
 
 	public void deleteUser(long userId) {
-		repository.deleteByUserId(userId);
+		repository.deleteById(userId);
 	}
 }
